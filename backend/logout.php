@@ -6,5 +6,5 @@ session_unset();
 session_destroy();
 
 /* BALIK KE HALAMAN LOGIN */
-header("Location: ../views/auth/login.php");
+header("Location: ../index.php");
 exit;

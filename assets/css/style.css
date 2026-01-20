@@ -157,6 +157,7 @@ img {
     overflow: hidden;
 }
 
+/* DEFAULT: gambar tidak bisa diklik */
 .banner img {
     position: absolute;
     inset: 0;
@@ -167,8 +168,11 @@ img {
     pointer-events: none;
 }
 
-.slide.active {
+/* HANYA SLIDE AKTIF YANG BISA DIKLIK */
+.banner img.slide.active {
     display: block;
+    pointer-events: auto; /* 🔥 FIX UTAMA */
+    cursor: pointer;
 }
 
 /* ARROW */
@@ -210,6 +214,7 @@ img {
 .dot.active {
     background: #537FAE;
 }
+
 
 /* ======================
    PRODUCT
@@ -1474,4 +1479,133 @@ img {
     outline: none;
     border-color: #3b82f6;
     box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+
+/* ======================
+   EVENT REGISTER FORM
+====================== */
+.event-wrapper {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f2a44, #4b6f8f);
+}
+
+.event-card {
+    background: #fff;
+    width: 380px;
+    padding: 32px 28px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.event-card h2 {
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.event-card input,
+.event-card select {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    outline: none;
+}
+
+.event-card input:focus,
+.event-card select:focus {
+    border-color: #6fa8dc;
+}
+
+.event-card button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #d8efff;
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.event-card button:hover {
+    background: #c6e6ff;
+}
+
+/* ======================
+   SUCCESS MODAL
+====================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 42, 68, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-card {
+    background: #fff;
+    width: 360px;
+    padding: 32px 28px;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    animation: scaleIn 0.3s ease;
+}
+
+.modal-card h2 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.modal-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.visitor-number {
+    margin: 18px 0;
+    font-size: 48px;
+    font-weight: 700;
+    color: #0f2a44;
+}
+
+.modal-note {
+    margin-bottom: 18px;
+}
+
+.modal-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #d8efff;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.modal-card button:hover {
+    background: #c6e6ff;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

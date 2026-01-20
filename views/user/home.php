@@ -28,10 +28,13 @@ $products = mysqli_query(
 
 <!-- ================= BANNER ================= -->
 <div class="banner">
-    <img src="../../assets/img/banner1.jpg" class="slide active">
+
+    <a href="../event/register.php">
+        <img src="../../assets/img/banner_event.jpg" class="slide active">
+    </a>
+
     <img src="../../assets/img/banner2.jpg" class="slide">
     <img src="../../assets/img/banner3.jpg" class="slide">
-    <img src="../../assets/img/banner4.jpg" class="slide">
 
     <div class="arrow left" onclick="prevSlide()">❮</div>
     <div class="arrow right" onclick="nextSlide()">❯</div>

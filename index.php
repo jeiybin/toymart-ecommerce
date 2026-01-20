@@ -40,8 +40,7 @@ $characters = mysqli_query($conn, "SELECT DISTINCT character_name FROM products"
         <!-- SEARCH -->
         <div class="search-box">
             <form>
-                <input type="text" placeholder="Cari mainan / kategori">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Cari nama / brand / kategori / karakter ">
             </form>
         </div>
 
@@ -93,10 +92,12 @@ $characters = mysqli_query($conn, "SELECT DISTINCT character_name FROM products"
 
 <!-- ================= BANNER ================= -->
 <div class="banner">
-    <img src="assets/img/banner1.jpg" class="slide active">
+    <a href="views/event/register.php">
+        <img src="assets/img/banner_event.jpg" class="slide active">
+    </a>
+
     <img src="assets/img/banner2.jpg" class="slide">
     <img src="assets/img/banner3.jpg" class="slide">
-    <img src="assets/img/banner4.jpg" class="slide">
 
     <div class="arrow left" onclick="prevSlide()">❮</div>
     <div class="arrow right" onclick="nextSlide()">❯</div>
